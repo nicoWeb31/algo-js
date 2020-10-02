@@ -7,27 +7,48 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+// function palindrome(str) {
+
+//     const strTab = str.split('');
+
+
+//     for (let i of strTab) {
+//         const strReverse = strTab.reverse()
+//         for (j of strReverse) {
+
+//             if (i !== j) {
+//                 return false
+//             }
+//             return true
+            
+//         }
+//     }
+
+// }
+
+
 function palindrome(str) {
 
-    const strTab = str.split('');
 
+    const reversed = str.split('').reverse().join('');
+    // if(str !== reversed){
+    //     return false
+    // }
 
-    for (let i of strTab) {
-        const strReverse = strTab.reverse()
-        for (j of strReverse) {
-            console.log(i,j)
-            if (i !== j) {
-                return false
-            }else{
-                return true
-            }
-        }
-    }
+    // return true
+    
+    return str === reversed;
 
 }
 
-palindrome("abcdefg")
 
+//every array proto
+// function palindrome(str){
+//     return str.split('').every((char,i)=>{
+//         return char === str[str.length - i - 1]
+//     })
+
+// }
 
 
 module.exports = palindrome;
