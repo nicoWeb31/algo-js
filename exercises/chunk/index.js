@@ -12,25 +12,40 @@
 //cree des array du nombre du deuxieme aregument
 
 
+
+//sol 1 :
+// function chunk(array, size) {
+
+//     const newArayChunked = [];
+
+//     for(let  i of array){
+
+//         const last = newArayChunked[newArayChunked.length - 1]
+
+//         if(!last || last.length === size){
+            
+//             newArayChunked.push([i])
+//         }else{
+//             last.push(i)
+//         }
+
+
+//     }
+
+//     return newArayChunked
+// }
+
 function chunk(array, size) {
 
-    const newArayChunked = [];
+    const chuynked = [];
+    let index = 0
 
-    for(let  i of array){
-
-        const last = newArayChunked[newArayChunked.length - 1]
-
-        if(!last || last.length === size){
-            
-            newArayChunked.push([i])
-        }else{
-            last.push(i)
-        }
-
-
+    while(index < array.length){
+        chuynked.push(array.slice(index,index + size))
+        index += size
     }
 
-    return newArayChunked
+    return chuynked
 }
 
 module.exports = chunk;
