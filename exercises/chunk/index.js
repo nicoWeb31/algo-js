@@ -12,6 +12,25 @@
 //cree des array du nombre du deuxieme aregument
 
 
-function chunk(array, size) {}
+function chunk(array, size) {
+
+    const newArayChunked = [];
+
+    for(let  i of array){
+
+        const last = newArayChunked[newArayChunked.length - 1]
+
+        if(!last || last.length === size){
+            
+            newArayChunked.push([i])
+        }else{
+            last.push(i)
+        }
+
+
+    }
+
+    return newArayChunked
+}
 
 module.exports = chunk;
